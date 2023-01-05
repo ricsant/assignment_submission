@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useLocalState } from '../util/useLocalStorage';
-import { Link } from 'react-router-dom';
-import { Badge, Button, Card, Col, Row } from 'react-bootstrap';
+import { Badge, Button, Card, Col, Container, Row } from 'react-bootstrap';
 
-const Dashboard = () => {
+const CodeReviewerDashboard = () => {
 
     const [jwt, setJwt] = useLocalState("", "jwt");
     const [assignments, setAssignments] = useState(null);
@@ -41,7 +40,7 @@ const Dashboard = () => {
     }
 
     return (
-      <div style={{ margin: "2em" }}>
+      <Container>
         <Row>
           <Col>
             <div 
@@ -84,9 +83,9 @@ const Dashboard = () => {
           </div>
         ) : (
         <></>)}
-      </div>
+      </Container>
     );
 };
 
-export default Dashboard;
+export default CodeReviewerDashboard;
 
